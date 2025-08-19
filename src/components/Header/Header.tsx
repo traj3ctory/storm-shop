@@ -1,28 +1,28 @@
 // Базовые импорты
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 // Компоненты проекта
-import { StormIconButton, BlueButton, PinkButton } from '../../styles/mui';
+import { BlueButton, PinkButton, StormIconButton } from '../../styles/mui';
 
 // Стили
 import useResolutions from '../../hooks/useResolusions';
 import resStyles from '../../utils/resStyles';
-import styles from './styles.module.scss'
+import styles from './styles.module.scss';
 
 // Material-UI
-import { Toolbar, Typography, Menu, MenuItem, AppBar } from '@mui/material';
-import { Box } from '@mui/system'
+import { AppBar, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import { Box } from '@mui/system';
 
 // Картинки & Иконки
-import MenuIcon from '@mui/icons-material/Menu';
-import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
-import Person2RoundedIcon from '@mui/icons-material/Person2Rounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import DiamondRoundedIcon from '@mui/icons-material/DiamondRounded';
-import Logo from '../img/logo512.png'
+import MenuIcon from '@mui/icons-material/Menu';
+import Person2RoundedIcon from '@mui/icons-material/Person2Rounded';
+import WorkRoundedIcon from '@mui/icons-material/WorkRounded';
+import Logo from '../img/logo512.png';
 
-function App() {
+function Header() {
     // Инициализация нужных переменных
     const [anchorElMenu, setAnchorElMenu] = useState<null | HTMLElement>(null);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -84,8 +84,9 @@ function App() {
                         </a>
                         <Typography noWrap component='nav' className={`${resStyles('header_nav', resolution)}`}>
                             <Toolbar className={resStyles("nav_block", resolution)}>
-                                <Link to="/"><PinkButton sx={buttonStyles} startIcon={<DiamondRoundedIcon style={{ marginRight: '4px' }} />}>SUBSCRIPTIONS</PinkButton></Link>
-                                <Link to="/scripts"><BlueButton sx={buttonStyles} startIcon={<CodeRoundedIcon style={{ marginRight: '4px' }} />}>SCRIPTS</BlueButton></Link>
+                                {/* Link is throwing an error */}
+                                <a href="/signup"><PinkButton sx={buttonStyles} startIcon={<DiamondRoundedIcon style={{ marginRight: '4px' }} />}>Create Account</PinkButton></a>
+                                <a href="/login"><BlueButton sx={buttonStyles} startIcon={<CodeRoundedIcon style={{ marginRight: '4px' }} />}>Login Account</BlueButton></a>
                             </Toolbar>
 
                             <span style={{ fontSize: '32px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>|</span>
@@ -145,4 +146,4 @@ function App() {
     )
 }
 
-export default App
+export default Header

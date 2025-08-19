@@ -1,21 +1,21 @@
 // Basic imports
-import { useCallback, useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useCallback, useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 
 // Styles
-import styles from '../styles/App.module.scss'
+import styles from '../styles/App.module.scss';
 
 // API imports
-import { APIContext } from '../context/APIContext.js'
+import { APIContext } from '../context/APIContext.js';
 
 // Libraries
 import ReCAPTCHA from "react-google-recaptcha";
 
 // Project Components & Hooks
-import ModalFail from '../components/ModalFail/index.js'
-import ModalSuccess from '../components/ModalSuccess/index.js'
-import { StormButton, PinkButton } from '../styles/mui.js';
+import ModalFail from '../components/ModalFail/index.js';
+import ModalSuccess from '../components/ModalSuccess/index.js';
+import { PinkButton, StormButton } from '../styles/mui.js';
 
 export default function LogIn() {
     // Basic variables

@@ -1,22 +1,22 @@
 // Basic imports
-import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // Pages
 import App from './pages/App/App.tsx';
-import SignUp from './pages/SignUp.tsx'
+import Article from './pages/Article/Article.tsx';
 import LogIn from './pages/LogIn.tsx';
 import ScriptLab from './pages/ScriptLab/ScriptLab.tsx';
-import Article from './pages/Article/Article.tsx';
+import SignUp from './pages/SignUp.tsx';
 
 // API imports
-import Api from './utils/Api.ts'
-import { APIContext } from './context/APIContext.ts'
-import { getUUID, checkUUID, findUUID } from './utils/UUID.ts';
+import { APIContext } from './context/APIContext.ts';
+import Api from './utils/Api.ts';
+import { checkUUID, findUUID, getUUID } from './utils/UUID.ts';
 
 // Project Components & Hooks
-import Header from './components/Header/Header.tsx';
 import Footer from './components/Footer/Footer.tsx';
+import Header from './components/Header/Header.tsx';
 
 function RouterComp() {
 
